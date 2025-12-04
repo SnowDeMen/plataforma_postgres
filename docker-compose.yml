@@ -1,8 +1,8 @@
 # Docker Compose - PostgreSQL
 # Servicio independiente para EasyPanel
 #
-# Uso local: docker compose up -d
-# En EasyPanel: desplegar como servicio con estas variables de entorno
+# En EasyPanel: desplegar como servicio con variables de entorno
+# Para desarrollo local: agregar "ports: - 5432:5432" si necesitas acceso externo
 
 services:
   postgres:
@@ -16,11 +16,6 @@ services:
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
       - postgres-data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
-    networks:
-      - default
-      - easypanel
     restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-training_user} -d ${POSTGRES_DB:-training_db}"]
@@ -30,8 +25,3 @@ services:
 
 volumes:
   postgres-data:
-
-networks:
-  easypanel:
-    external: true
-
