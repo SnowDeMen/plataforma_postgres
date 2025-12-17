@@ -90,3 +90,13 @@ postgresql+asyncpg://<user>:<password>@<host>:5432/<database>
 
 En EasyPanel, el `<host>` es el nombre del servicio (por defecto `postgres`).
 
+
+
+
+
+
+
+
+
+
+

@@ -16,3 +16,13 @@ BEGIN
     RAISE NOTICE 'Base de datos inicializada correctamente';
 END $$;
 
+
+
+
+
+
+
+
+
+
+
