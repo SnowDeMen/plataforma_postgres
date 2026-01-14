@@ -18,7 +18,7 @@ services:
       - easypanel
 
 volumes:
-  postgres-data-${ENV}:
+  postgres-data:
 
 
 networks:
